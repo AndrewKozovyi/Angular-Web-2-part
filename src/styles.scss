@@ -1,0 +1,342 @@
+$primary-color: #ffcb2e;
+$secondary-color: #232323;
+$font-stack: 'Arial', sans-serif;
+$margin-spacing: 20px;
+
+body {
+  font-family: $font-stack;
+  background: #a6a6a6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
+}
+
+h1{
+  margin: 0;
+}
+
+hr{
+  margin: 0;
+  padding: 0;
+  height: 1.5px;
+  background-color: white;
+  border: none;
+}
+
+.header{
+  overflow: visible;
+  padding-top: 3em;
+  margin: 0 0 2em 0;
+  width: 100%;
+  .lorem{
+    height: 8.2em;
+    margin: 0 6em 0 25em;
+    p{
+      margin-top: 0;
+      text-align: justify;
+    }
+    #strong-p{
+      margin-top: 1.5em;
+      margin-bottom: 2.5em;
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+  .title-info{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .contact-info{
+    margin: 1.1em 6em 0 2em;
+    p{
+      font-weight: bold;
+    }
+  }
+  .title{
+    background-color: $primary-color;
+    padding-right: 4em;
+    height: auto;
+    #title-text{
+      margin: 1.5em 0 2em 25em;
+      h1{
+        font-size: 3.5em;
+        line-height: 0.9em;
+      }
+      #surname{
+        margin: 0;
+        font-weight: normal;
+      }
+      p{
+        color: #232323;
+        margin: 0;
+        font-size: 0.95em;
+        font-style: italic;
+        letter-spacing: 4.5px;
+      }
+    }
+  }
+  hr{
+    background-color: $secondary-color;
+  }
+}
+
+.sidebar{
+  margin: -21em 0 3em 3em;
+  background-color: $secondary-color;
+  color: white;
+  width: 20em;
+  height: auto;
+  padding: 2em 0 2em 0;
+  .profile-image{
+    background-color: $secondary-color;
+    margin: 0 3em;
+    .face{
+      width: 100%;
+      box-sizing: border-box;
+      border: 0.5em solid;
+    }
+  }
+  h1{
+    margin-left: -0.1em;
+  }
+  hr{
+    background-color: white;
+  }
+  .education{
+    margin: 2em 3em 0 3em;
+    text-align: justify;
+    .degree{
+      margin: 2em 0 2em 0;
+    }
+    span {
+      display: table-cell;
+    }
+    h4{
+      margin: 0;
+    }
+    p {
+      font-size: 0.75em;
+    }
+  }
+  .references{
+    margin: 2em 3em 0 3em;
+    text-align: justify;
+    .contacts{
+      margin: 2em 0;
+    }
+    .address{
+      color: $primary-color;
+      font-style: italic;
+      font-weight: bold;
+    }
+    h3{
+      margin: 0;
+    }
+    h5{
+      margin: 0.35em 0 0 0;
+      font-weight: normal;
+    }
+  }
+  .languages{
+    margin: 2em 3em 0.5em 3em;
+    ul {
+      padding: 0;
+      margin: 1.5em 0 0 0;
+
+      li {
+        margin-top: 1em;
+        list-style: none;
+        font-size: 0.6em;
+        font-weight: bold;
+      }
+
+      li:before {
+        color: $primary-color;
+        content: "·";
+        font-size: 4em;
+        vertical-align: middle;
+        line-height: 0.4em;
+      }
+    }
+    .lang-progress{
+      float: right;
+    }
+    .sd-progress-bar{
+      float: right;
+      margin: 0.45em 0 0 0;
+      width: 47%;
+      background-color: #3d3d3d;
+    }
+  }
+}
+.main-info{
+  width: 50rem;
+  max-width: 47.45em;
+  margin: 1em 0 3em 3em;
+  hr{
+    background-color: $secondary-color;
+  }
+  h1{
+    margin-left: -0.1em;
+  }
+  h2{
+    margin: 0.15em 0 0.25em 0;
+  }
+  h3{
+    margin: 0;
+    font-style: italic
+  }
+  p{
+    margin: 0;
+  }
+  .city{
+    font-style: italic;
+  }
+  .job-description{
+    margin: 0;
+    font-weight: normal;
+    line-height: 1.45em;
+  }
+  .job{
+    margin: 2em 0 0 0;
+    text-align: justify;
+    span {
+      display: table-cell;
+    }
+  }
+  .knowledge{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    ul {
+      padding: 0;
+      margin: 1.5em 0 0 0;
+
+      li {
+        margin-top: 1em;
+        list-style: none;
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+
+      li:before {
+        color: $primary-color;
+        content: "·";
+        font-size: 4em;
+        vertical-align: middle;
+        line-height: 0.4em;
+      }
+    }
+    .skills-hobbies{
+      width: 40%;
+    }
+    .mn-progress-bar{
+      float: right;
+      margin: 0.45em 0 0 0;
+      width: 47%;
+      background-color: #e6e6e6;
+    }
+  }
+}
+.progress{
+  height: 100%;
+  width: 0;
+  padding: 0.21em 0 0.21em 0;
+  background-color: $primary-color;
+  transition: width 1s ease-in-out;
+}
+.years-vertical{
+  border: none;
+  font-weight: bold;
+  background-color: $primary-color;
+  color: black;
+  margin: 0 2em 0 0;
+  padding: 1em 0.4em 1em 0.1em;
+  font-size: 0.75em;
+  letter-spacing: 0.3px;
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+  float: left;
+}
+.years-horizontal{
+  border: none;
+  width: 10em;
+  height: 1.7em;
+  font-weight: bold;
+  background-color: $primary-color;
+  color: black;
+  margin: auto 2em auto 0;
+  padding: 0.4em 1em 0.1em 1em;
+  font-size: 0.75em;
+  letter-spacing: 0.5px;
+}
+.mini-icon-box{
+  display: flex;
+  .mini-icon-contacts{
+    display: flex;
+    justify-content: center;
+    background-color: $primary-color;
+    padding: 0.25em;
+    height: 1.2em;
+    width: 1.2em;
+    margin: auto 1em auto 0;
+  }
+  .mini-icon-heading{
+    display: flex;
+    justify-content: center;
+    background-color: $primary-color;
+    padding: 0.35em;
+    height: 1.2em;
+    width: 1.2em;
+    margin: auto 1em auto 0;
+  }
+  .icon{
+    height: 100%;
+  }
+}
+
+.hidden-box{
+  position: absolute;
+  left: -999em;
+}
+.non-open-info{
+  display: flex;
+}
+.opened-box{
+  animation: scale-in-center 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  transition: 0.7s;
+}
+.closed-box{
+  animation: scale-out-center 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  transition: 0.7s;
+}
+@keyframes scale-out-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes scale-in-center {
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
