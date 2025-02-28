@@ -14,9 +14,17 @@
       </div>
     </div>
     <div class="contact-info">
-      <app-contact-item icon="Phone.png" text="+1-718-310-5588"></app-contact-item>
-      <app-contact-item icon="Web.png" text="yourwebsite.com"></app-contact-item>
-      <app-contact-item icon="Location.png" text="769 Prudence Street Lincoln, Park, MI 48146"></app-contact-item>
+
+
+      @for (item of [
+        {icon:"Phone.png", text:"+1-718-310-5588" },
+        {icon:"Web.png", text:"yourwebsite.com" },
+        {icon:"Location.png", text:"769 Prudence Street Lincoln, Park, MI 48146" },
+
+      ]; track item.icon
+        ){
+        <app-contact-item [icon]="item.icon" [text]="item.text"></app-contact-item>
+      }
     </div>
   </div>
 </div>

@@ -10,10 +10,16 @@
 
     <hr>
 
-    <app-experience-item year="2021 - Present" company="Creative Agency" city="Chicago" position="SENIOR WEB DESIGNER"></app-experience-item>
-    <app-experience-item year="2018 - 2021" company="Creative Market" city="United Kingdom" position="GRAPHIC DESIGNER"></app-experience-item>
-    <app-experience-item year="2015 - 2018" company="Marketing Agency" city="United Kingdom" position="MARKETING MANAGER"></app-experience-item>
-    <app-experience-item year="2013 - 2015" company="Creative Agency" city="Chicago" position="JUNIO WEB DESIGNER"></app-experience-item>
+    @for (item of [
+      {year:"2021 - Present", company:"Creative Agency", city:"Chicago", position:"SENIOR WEB DESIGNER" },
+      {year:"2018 - 2021", company:"Creative Market", city:"United Kingdom", position:"GRAPHIC DESIGNER" },
+      {year:"2015 - 2018", company:"Marketing Agency", city:"United Kingdom", position:"MARKETING MANAGER" },
+      {year:"2013 - 2015", company:"Creative Agency", city:"Chicago", position:"JUNIO WEB DESIGNER" },
+
+    ]; track item.year
+      ){
+      <app-experience-item [year]="item.year" [company]="item.company" [city]="item.city" [position]="item.position"></app-experience-item>
+    }
   </section>
 
   <div class="knowledge">
@@ -26,11 +32,18 @@
       </div>
       <hr>
       <ul class="progress-section" id="skills-section">
-        <app-skill name="Adobe Photoshop" [progress]="85"></app-skill>
-        <app-skill name="Adobe Illustrator" [progress]="40"></app-skill>
-        <app-skill name="Microsoft Word" [progress]="60"></app-skill>
-        <app-skill name="Microsoft Powerpoint" [progress]="60"></app-skill>
-        <app-skill name="HTML-5/CSS-3" [progress]="85"></app-skill>
+
+        @for (item of [
+          {name:"Adobe Photoshop", progress:85},
+          {name:"Adobe Illustrator", progress:40},
+          {name:"Microsoft Word", progress:60},
+          {name:"Microsoft Powerpoint", progress:60},
+          {name:"HTML-5/CSS-3", progress:85},
+
+        ]; track item.name
+          ){
+          <app-skill [name]="item.name" [progress]="item.progress"></app-skill>
+        }
       </ul>
     </section>
 
@@ -43,11 +56,19 @@
       </div>
       <hr>
       <ul class="progress-section" id="hobbies-section">
-        <app-skill name="Book Reading" [progress]="85"></app-skill>
-        <app-skill name="Travelling" [progress]="40"></app-skill>
-        <app-skill name="Playing chess" [progress]="60"></app-skill>
-        <app-skill name="Graphic Design" [progress]="60"></app-skill>
-        <app-skill name="Painting" [progress]="85"></app-skill>
+
+        @for (item of [
+          {name:"Book Reading", progress:85},
+          {name:"Travelling", progress:60},
+          {name:"Playing chess", progress:72},
+          {name:"Graphic Design", progress:60},
+          {name:"Painting", progress:85},
+
+        ]; track item.name
+          ){
+          <app-skill [name]="item.name" [progress]="item.progress"></app-skill>
+        }
+
       </ul>
     </section>
   </div>

@@ -9,4 +9,4 @@ import { ReferenceComponent } from './education-item.component';
   imports: [LanguageComponent, EducationItemComponent, ReferenceComponent],
   templateUrl: './sidebar.component.html'
 })
-export class SidebarComponent {}
+export class SidebarComponent { }

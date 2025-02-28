@@ -42,13 +42,13 @@ export class ExperienceItemComponent {
       this.isClosing = true;
       setTimeout(() => {
         this.isClosing = false;
-        this.isHidden = true; // Ховаємо після завершення анімації
+        this.isHidden = true;
       }, 500);
     } else {
-      this.isHidden = false; // Робимо блок видимим перед відкриттям
+      this.isHidden = false;
       setTimeout(() => {
         this.isOpen = true;
-      }, 100); // Трохи затримуємо для коректного рендеру
+      }, 100);
     }
 
     this.isOpen = !this.isOpen;
