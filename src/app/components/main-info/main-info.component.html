@@ -11,14 +11,14 @@
     <hr>
 
     @for (item of [
-      {year:"2021 - Present", company:"Creative Agency", city:"Chicago", position:"SENIOR WEB DESIGNER" },
-      {year:"2018 - 2021", company:"Creative Market", city:"United Kingdom", position:"GRAPHIC DESIGNER" },
-      {year:"2015 - 2018", company:"Marketing Agency", city:"United Kingdom", position:"MARKETING MANAGER" },
-      {year:"2013 - 2015", company:"Creative Agency", city:"Chicago", position:"JUNIO WEB DESIGNER" },
+      {year:"2021 - Present", company:"Creative Agency", city:"Chicago", position:"SENIOR WEB DESIGNER", className: "job"},
+      {year:"2018 - 2021", company:"Creative Market", city:"United Kingdom", position:"GRAPHIC DESIGNER", className: "job"},
+      {year:"2015 - 2018", company:"Marketing Agency", city:"United Kingdom", position:"MARKETING MANAGER", className: "job"},
+      {year:"2013 - 2015", company:"Creative Agency", city:"Chicago", position:"JUNIO WEB DESIGNER", className: "job"},
 
     ]; track item.year
       ){
-      <app-experience-item [year]="item.year" [company]="item.company" [city]="item.city" [position]="item.position"></app-experience-item>
+      <app-experience-item [year]="item.year" [company]="item.company" [city]="item.city" [position]="item.position" [className]="item.className"></app-experience-item>
     }
   </section>
 
@@ -34,15 +34,15 @@
       <ul class="progress-section" id="skills-section">
 
         @for (item of [
-          {name:"Adobe Photoshop", progress:85},
-          {name:"Adobe Illustrator", progress:40},
-          {name:"Microsoft Word", progress:60},
-          {name:"Microsoft Powerpoint", progress:60},
-          {name:"HTML-5/CSS-3", progress:85},
+          {name:"Adobe Photoshop", progress:85, className: "mn-progress-bar"},
+          {name:"Adobe Illustrator", progress:40, className: "mn-progress-bar"},
+          {name:"Microsoft Word", progress:60, className: "mn-progress-bar"},
+          {name:"Microsoft Powerpoint", progress:60, className: "mn-progress-bar"},
+          {name:"HTML-5/CSS-3", progress:85, className: "mn-progress-bar"},
 
         ]; track item.name
           ){
-          <app-skill [name]="item.name" [progress]="item.progress"></app-skill>
+          <app-skill [name]="item.name" [progress]="item.progress" [className]="item.className"></app-skill>
         }
       </ul>
     </section>
@@ -58,15 +58,15 @@
       <ul class="progress-section" id="hobbies-section">
 
         @for (item of [
-          {name:"Book Reading", progress:85},
-          {name:"Travelling", progress:60},
-          {name:"Playing chess", progress:72},
-          {name:"Graphic Design", progress:60},
-          {name:"Painting", progress:85},
+          {name:"Book Reading", progress:85, className: "mn-progress-bar"},
+          {name:"Travelling", progress:60, className: "mn-progress-bar"},
+          {name:"Playing chess", progress:72, className: "mn-progress-bar"},
+          {name:"Graphic Design", progress:60, className: "mn-progress-bar"},
+          {name:"Painting", progress:85, className: "mn-progress-bar"},
 
         ]; track item.name
           ){
-          <app-skill [name]="item.name" [progress]="item.progress"></app-skill>
+          <app-skill [name]="item.name" [progress]="item.progress" [className]="item.className"></app-skill>
         }
 
       </ul>

@@ -13,12 +13,14 @@
     <hr>
 
     @for (item of [
-      {year:"2011 - 2023", university:"Stanford University", degree:"MASTER DEGREE" },
-      {year:"2007 - 2010", university:"Chicago University", degree:"BACHELOR DEGREE" }
+      {year:"2011 - 2023", university:"Stanford University", degree:"MASTER DEGREE", className: "degree",
+        description:"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type"},
+      {year:"2007 - 2010", university:"Chicago University", degree:"BACHELOR DEGREE", className: "degree",
+      description:"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type"}
 
     ]; track item.year
       ){
-      <app-education-item [year]="item.year" [university]="item.university" [degree]="item.degree"></app-education-item>
+      <app-experience-item [year]="item.year" [university]="item.university" [degree]="item.degree" [className]="item.className" [description]="item.description"></app-experience-item>
     }
   </section>
 
@@ -51,15 +53,15 @@
     <hr>
     <ul>
       @for (item of [
-        {name:"English", progress:80},
-        {name:"French", progress:60},
-        {name:"Spanish", progress:72},
-        {name:"German", progress:55},
-        {name:"Arabic", progress:78},
+        {name:"English", progress:80, className: "sd-progress-bar"},
+        {name:"French", progress:60, className: "sd-progress-bar"},
+        {name:"Spanish", progress:72, className: "sd-progress-bar"},
+        {name:"German", progress:55, className: "sd-progress-bar"},
+        {name:"Arabic", progress:78, className: "sd-progress-bar"},
 
       ]; track item.name
         ){
-        <app-language [name]="item.name" [progress]="item.progress"></app-language>
+        <app-skill [name]="item.name" [progress]="item.progress" [className]="item.className"></app-skill>
       }
     </ul>
   </section>

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { LanguageComponent } from './app-language.component';
-import { EducationItemComponent } from './app-reference.component';
 import { ReferenceComponent } from './education-item.component';
+import { SkillComponent } from '../main-info/app-skill.component';
+import {ExperienceItemComponent} from '../main-info/experience-item.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [LanguageComponent, EducationItemComponent, ReferenceComponent],
+  imports: [SkillComponent, ReferenceComponent, ExperienceItemComponent],
   templateUrl: './sidebar.component.html'
 })
 export class SidebarComponent { }
