@@ -11,15 +11,7 @@
       <h1>EDUCATION</h1>
     </div>
     <hr>
-
-    @for (item of [
-      {year:"2011 - 2023", university:"Stanford University", degree:"MASTER DEGREE", className: "degree",
-        description:"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type"},
-      {year:"2007 - 2010", university:"Chicago University", degree:"BACHELOR DEGREE", className: "degree",
-      description:"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type"}
-
-    ]; track item.year
-      ){
+    @for (item of education; track item.year){
       <app-experience-item [year]="item.year" [university]="item.university" [degree]="item.degree" [className]="item.className" [description]="item.description"></app-experience-item>
     }
   </section>
@@ -32,12 +24,7 @@
       <h1>REFERENCES</h1>
     </div>
     <hr>
-    @for (item of [
-      {name:"DARWIN B. MAGANA", address:"2813 Shade Lane Mancos, CO.", phone:"+1-970-533-3339", email: "www.yourwebsite.com" },
-      {name:"Robert J. Belvin", address:"2813 Shade Lane Mancos, CO.", phone:"+1-908-987-5103", email: "www.yourwebsite.com" }
-
-    ]; track item.name
-      ){
+    @for (item of reference; track item.name){
       <app-reference [name]="item.name" [address]="item.address" [phone]="item.phone" [email]="item.email"></app-reference>
     }
   </section>
@@ -52,15 +39,7 @@
     </div>
     <hr>
     <ul>
-      @for (item of [
-        {name:"English", progress:80, className: "sd-progress-bar"},
-        {name:"French", progress:60, className: "sd-progress-bar"},
-        {name:"Spanish", progress:72, className: "sd-progress-bar"},
-        {name:"German", progress:55, className: "sd-progress-bar"},
-        {name:"Arabic", progress:78, className: "sd-progress-bar"},
-
-      ]; track item.name
-        ){
+      @for (item of languages; track item.name){
         <app-skill [name]="item.name" [progress]="item.progress" [className]="item.className"></app-skill>
       }
     </ul>

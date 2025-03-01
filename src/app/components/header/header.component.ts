@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { ContactItemComponent } from './contact-item.component';
+import {InfoService} from '../service/info-service.component';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,12 @@ import { ContactItemComponent } from './contact-item.component';
   imports: [ContactItemComponent],
   templateUrl: './header.component.html'
 })
-export class HeaderComponent {}
+export class HeaderComponent implements OnInit {
+  contacts: any[]=[]
+
+  constructor(private ContactService: InfoService) {}
+
+  ngOnInit() {
+    this.contacts = this.ContactService.getContacts();
+  }
+}
