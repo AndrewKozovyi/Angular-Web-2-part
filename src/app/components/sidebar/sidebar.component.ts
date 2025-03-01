@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import { ReferenceComponent } from './education-item.component';
 import { SkillComponent } from '../main-info/app-skill.component';
 import {ExperienceItemComponent} from '../main-info/experience-item.component';
-import {InfoService} from '../service/info-service.component';
+import { InfoService } from '../service/info-service.component';
+import {Skill, Reference, Job, Education} from '../service/dto_interfaces';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,15 +12,21 @@ import {InfoService} from '../service/info-service.component';
   templateUrl: './sidebar.component.html'
 })
 export class SidebarComponent implements OnInit {
-  languages: any[] =[];
-  education: any[] =[];
-  reference: any[] =[];
+  languages: Skill[] =[];
+  education: Education[] =[];
+  reference: Reference[] =[];
 
   constructor(private InfoService: InfoService) {}
 
-  ngOnInit() {
-    this.languages = this.InfoService.getLanguages();
-    this.education = this.InfoService.getEducation();
-    this.reference = this.InfoService.getReference();
+  ngOnInit(): void {
+    this.InfoService.getLanguages().subscribe((data: Skill[]) => {
+      this.languages = data;
+    });
+    this.InfoService.getEducation().subscribe((data: Education[]) => {
+      this.education = data;
+    });
+    this.InfoService.getReference().subscribe((data: Reference[]) => {
+      this.reference = data;
+    });
   }
 }

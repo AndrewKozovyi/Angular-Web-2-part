@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { ContactItemComponent } from './contact-item.component';
 import {InfoService} from '../service/info-service.component';
+import { Contacts } from '../service/dto_interfaces';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +10,13 @@ import {InfoService} from '../service/info-service.component';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
-  contacts: any[]=[]
+  contacts: Contacts[]=[]
 
-  constructor(private ContactService: InfoService) {}
+  constructor(private InfoService: InfoService) {}
 
-  ngOnInit() {
-    this.contacts = this.ContactService.getContacts();
+  ngOnInit(): void {
+    this.InfoService.getContacts().subscribe((data: Contacts[]) => {
+      this.contacts = data;
+    });
   }
 }

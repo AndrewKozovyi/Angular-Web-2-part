@@ -1,12 +1,16 @@
 {
   "name": "angular",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "start_server": "node dist/server.js",
+    "dev": "ts-node src/server.ts",
+    "build_server": "tsc"
   },
   "private": true,
   "dependencies": {
