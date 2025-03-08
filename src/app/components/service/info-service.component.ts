@@ -16,11 +16,11 @@ export class InfoService {
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'Unknown error occurred!';
     if (error.error instanceof ErrorEvent) {
-      errorMessage = `Client error: ${error.error.message}`;
+      errorMessage = `Client error: ${error.message}`;
     } else {
-      errorMessage = `Server error ${error.status}: ${error.message}`;
+      errorMessage = `Server error: ${error.message}`;
     }
-
+    
     this.toastr.error(errorMessage, 'API Error', {
       timeOut: 3000,
       closeButton: true,

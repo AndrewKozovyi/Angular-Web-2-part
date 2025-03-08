@@ -1,0 +1,37 @@
+<section class="form">
+  <h1>Реєстрація</h1>
+  <form [formGroup]="SignUpForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Ім'я:</label>
+      <input type="text" formControlName="username">
+    </div>
+    <div *ngIf="SignUpForm.get('username')?.invalid && SignUpForm.get('username')?.touched">
+      <span *ngIf="SignUpForm.get('username')?.errors?.['required']">Поле обов'язкове</span>
+      <span *ngIf="SignUpForm.get('username')?.errors?.['invalidUsername']">Ім'я містить заборонені символи</span>
+    </div>
+
+    <div>
+      <label>Email:</label>
+      <input type="email" formControlName="email">
+    </div>
+    <div *ngIf="SignUpForm.get('email')?.invalid && SignUpForm.get('email')?.touched">
+      <span *ngIf="SignUpForm.get('email')?.errors?.['required']">Поле обов'язкове</span>
+      <span *ngIf="SignUpForm.get('email')?.errors?.['email']">Некоректний email</span>
+    </div>
+
+    <div>
+      <label>Пароль:</label>
+      <input type="password" formControlName="password">
+    </div>
+    <div *ngIf="SignUpForm.get('password')?.invalid && SignUpForm.get('password')?.touched">
+    <span *ngIf="SignUpForm.get('password')?.errors?.['required']">Поле обов'язкове</span>
+    <span *ngIf="SignUpForm.get('password')?.errors?.['invalidPassword']">
+        Пароль має містити мінімум 8 символів, 1 велику літеру, 1 маленьку літеру і 1 цифру
+      </span>
+  </div>
+
+    <button type="submit" [disabled]="SignUpForm.invalid">Зареєструватися</button>
+  </form>
+
+  <a routerLink="/login">Вхід</a>
+</section>
