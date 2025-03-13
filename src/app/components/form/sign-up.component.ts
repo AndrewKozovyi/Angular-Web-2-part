@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -22,7 +22,7 @@ import { ToastrService } from 'ngx-toastr';
     RouterLink
   ],
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
   SignUpForm: FormGroup;
 
   constructor(private fb: FormBuilder, private router: Router, private http: HttpClient, private toastr: ToastrService) {
@@ -49,6 +49,13 @@ export class SignUpComponent {
       return { invalidPassword: 'Пароль має містити мінімум 8 символів, 1 велику літеру, 1 маленьку літеру і 1 цифру' };
     }
     return null;
+  }
+
+  ngOnInit(){
+    const isAuthenticated = !!localStorage.getItem('user');
+    if (isAuthenticated) {
+      this.router.navigate(['/cv']);
+    }
   }
 
   onSubmit() {

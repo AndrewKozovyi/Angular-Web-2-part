@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -22,7 +22,7 @@ import {ToastrService} from 'ngx-toastr';
     RouterLink,
   ],
 })
-export class SignInComponent {
+export class SignInComponent implements OnInit {
   SignInForm: FormGroup;
 
   constructor(private fb: FormBuilder, private router: Router, private http: HttpClient, private toastr: ToastrService) {
@@ -42,6 +42,12 @@ export class SignInComponent {
     return null;
   }
 
+  ngOnInit(){
+    const isAuthenticated = !!localStorage.getItem('user');
+    if (isAuthenticated) {
+      this.router.navigate(['/cv']);
+    }
+  }
 
   onSubmit() {
     if (this.SignInForm.valid) {
@@ -51,7 +57,7 @@ export class SignInComponent {
           this.router.navigate(['/cv']);
         },
         error: (error) => {
-          const errorMessage = error?.error?.error || 'Помилка реєстрації';
+          const errorMessage = error?.error?.error || 'Помилка Входу';
           this.toastr.error(errorMessage, 'API Error', {
             timeOut: 3000,
             closeButton: true,
